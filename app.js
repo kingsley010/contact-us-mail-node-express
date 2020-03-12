@@ -28,7 +28,7 @@ var smtpTransport = nodemailer.createTransport({
   service: 'Gmail',
   port: 465,
   auth: {
-    user: process.env.DB_USER,
+    user: process.env.DB_MAIL,
     pass: process.env.DB_PASS
   }
 });
