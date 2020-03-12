@@ -6,7 +6,7 @@ import cors from 'cors';
 const app = express();
 
 const port = 4444;
-// abc
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
