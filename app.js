@@ -28,15 +28,15 @@ var smtpTransport = nodemailer.createTransport({
   service: 'Gmail',
   port: 465,
   auth: {
-    user: 'perfectman090@gmail.com',
-    pass: '2nov13'
+    user: process.env.DB_MAIL,
+    pass: process.env.DB_PASS
   }
 });
 
 var mailOptions = {
   from: data.email,
-  to: 'perfectman090@gmail.com',
-  subject: 'message',
+  to: process.env.DB_MAIL,
+  subject: process.env.DB_SUB,
   html: `<p>${data.name}</p>
           <p>${data.email}</p>
           <p>${data.message}</p>`
