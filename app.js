@@ -3,6 +3,8 @@ import bodyParser from 'body-parser';
 import nodemailer from 'nodemailer';
 import cors from 'cors';
 
+require('dotenv').config();
+
 const app = express();
 
 const port = 4444;
