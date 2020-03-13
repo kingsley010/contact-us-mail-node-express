@@ -18,7 +18,7 @@ app.listen(port, () => {
 
 
 app.get('/api/v1', (req, res) => {
-  res.send('Welcome to my api');
+  res.send('Welcome to my app');
 });
 
 app.post('/api/v1', (req,res) => {
