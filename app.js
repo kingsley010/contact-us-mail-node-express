@@ -25,8 +25,10 @@ app.post('/api/v1', (req,res) => {
   var data = req.body;
 
 var smtpTransport = nodemailer.createTransport({
-  service: 'Gmail',
+  service: 'gmail',
+  host: 'smtp.gmail.com',
   port: 465,
+  secure: true,
   auth: {
     user: process.env.DB_MAIL,
     pass: process.env.DB_PASS
@@ -36,7 +38,7 @@ var smtpTransport = nodemailer.createTransport({
 var mailOptions = {
   from: data.email,
   to: process.env.DB_MAIL,
-  subject: process.env.DB_SUB,
+  subject: 'You have a new message',
   html: `<p>${data.name}</p>
           <p>${data.email}</p>
           <p>${data.message}</p>`
