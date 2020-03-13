@@ -19,7 +19,7 @@ app.listen(port, () => {
 
 app.get('/api/v1', (req, res) => {
   res.send('Welcome to my api');
-})
+});
 
 app.post('/api/v1', (req,res) => {
   var data = req.body;
@@ -52,4 +52,4 @@ smtpTransport.sendMail(mailOptions,
   smtpTransport.close();
 });
 
-})
+});
