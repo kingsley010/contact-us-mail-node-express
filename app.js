@@ -44,11 +44,23 @@ var mailOptions = {
           <p>${data.message}</p>`
 };
 
+// verify connection configuration
+smtpTransport.verify(function(error, success) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("Server is ready to take our messages");
+  }
+});
+
+
 smtpTransport.sendMail(mailOptions,
 (error, response) => {
   if(error) {
+    console.log(error);
     res.send(error)
   } else {
+    console.log('success');
     res.send('Success')
   }
   smtpTransport.close();
