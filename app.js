@@ -32,14 +32,14 @@ var smtpTransport = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
-    user: process.env.DB_MAIL,
+    user: process.env.DB_SERVER,
     pass: process.env.DB_PASS
   }
 });
 
 var mailOptions = {
-  from: data.email,
-  to: process.env.DB_MAIL,
+  from: 'server',
+  to: process.env.DB_CLIENT,
   subject: 'You have a new message',
   html: `<p>${data.name}</p>
           <p>${data.email}</p>
