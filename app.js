@@ -41,7 +41,7 @@ var mailOptions = {
   from: 'server',
   to: process.env.DB_CLIENT,
   subject: 'You have a new message',
-  html: `<p>${data.name}</p>
+  html: `<p>From ${data.name}</p>
           <p>${data.email}</p>
           <p>${data.message}</p>`
 };
