@@ -3,6 +3,8 @@ import bodyParser from 'body-parser';
 import nodemailer from 'nodemailer';
 import cors from 'cors';
 
+require('dotenv').config();
+
 const app = express();
 
 const port = 4444;
@@ -17,27 +19,29 @@ app.listen(port, () => {
 });
 
 
-app.get('/', (req, res) => {
-  res.send('Welcome to my api');
-})
+app.get('/api/v1', (req, res) => {
+  res.send('Welcome to my app');
+});
 
 app.post('/api/v1', (req,res) => {
   var data = req.body;
 
 var smtpTransport = nodemailer.createTransport({
-  service: 'Gmail',
+  service: 'gmail',
+  host: 'smtp.gmail.com',
   port: 465,
+  secure: true,
   auth: {
-    user: process.env.DB_USER,
+    user: process.env.DB_SERVER,
     pass: process.env.DB_PASS
   }
 });
 
 var mailOptions = {
-  from: data.email,
-  to: process.env.DB_MAIL,
-  subject: process.env.DB_SUB,
-  html: `<p>${data.name}</p>
+  from: 'server',
+  to: process.env.DB_CLIENT,
+  subject: 'You have a new message',
+  html: `<p>From ${data.name}</p>
           <p>${data.email}</p>
           <p>${data.message}</p>`
 };
@@ -52,4 +56,4 @@ smtpTransport.sendMail(mailOptions,
   smtpTransport.close();
 });
 
-})
+});
