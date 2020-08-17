@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/perfect090/contact-us-mail-node-express.git"
+    "url": "git+https://github.com/kingsley010/contact-us-mail-node-express.git"
   },
   "author": "Kingsley Obioha",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/perfect090/contact-us-mail-node-express/issues"
+    "url": "https://github.com/kingsley010/contact-us-mail-node-express/issues"
   },
-  "homepage": "https://github.com/perfect090/contact-us-mail-node-express#readme",
+  "homepage": "https://github.com/kingsley010/contact-us-mail-node-express#readme",
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
